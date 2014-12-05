@@ -1,0 +1,14 @@
+---
+production:
+    database:
+        driver: mysql2
+        host: localhost
+        database: roucola
+        user: roucola
+        password: s3cr3t! # change this
+
+development:
+    database:
+        driver: sqlite
+        uri: db/development.db
+test:

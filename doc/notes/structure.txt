@@ -1,0 +1,12 @@
+A router template is a structure. A list of template tags necessary to compile a config
+constraints are defined as meta, mandatory or optional sections or blocks. Sections are looped, blocks are not.
+
+[
+    { constraint: meta, tags: ios-xr }, # All templates should have the tags ios-xr
+    {  constraint: mandatory-block, tags: base }, # A mandatory block with tag base
+    { constraint: mandatory-section, tags: router-isis }, # A mandatory section with tag router-isis
+    { constraint: optional-section, tags: router-bgp }, 
+    { constraint: optional-section, tags: multicast },
+    { constraint: mandatory-block, tags: qos },
+    { constraint: mandatory-section: tags: interfaces }
+]
