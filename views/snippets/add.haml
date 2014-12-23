@@ -1,17 +1,20 @@
 %h1 Add snippet
 
-= form_tag '/configure', :method => 'post' do
+
+= form_tag '/configure', :method => "POST" do
   = field_set_tag do
     %p
-      = label_tag :name
-      = text_field_tag :name
+      %label Name
+      = text_field :name
     %p
-      = label_tag :tags
-      = text_field_tag :tags
+      %label Tags
+      = text_field :tags
+      
     %p
-      = label_tag :template
-      = text_area_tag :template, :class => 'composearea'
+      %label Template
+      %br
+      %textarea{:name => "template", :class => "composearea"}
     %p
-      = submit_tag "Submit"
+      = submit_tag
 
     

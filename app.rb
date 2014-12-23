@@ -13,10 +13,6 @@ class Roucola < Sinatra::Base
     register Sinatra::AssetPack
     register Sinatra::ConfigFile
 
-    # Things from Padrino are handy
-    register Padrino::Helpers
-    enable :protect_from_csrf
-
     assets do
         js :application, [
             '/js/*.js'

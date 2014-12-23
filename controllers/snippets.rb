@@ -8,9 +8,11 @@ class Roucola < Sinatra::Base
     end
 
     get '/snippets/add' do
+        @pagetitle = "Add snippet"
+        @pagename = "snippets_add"
         # Compose the snippet
 
-        haml :'snippets/add'
+        haml :'snippets/add', :layout => :layout
     end
 
     post '/snippets/configure' do

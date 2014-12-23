@@ -7,25 +7,32 @@
     %script{:type => "text/javascript", :src => "/javascript/#{@pagename}.js"}
     %body
       =styled_flash
-     #menu
-       %ul
-         %li
-           %a(href="#") Nodes
-           %ul
-             %li= link_to 'List', '/nodes'
-             %li= link_to 'Define New', '/nodes/add'
-         %li
-           %a(href="#") Templating
-           %ul
-             %li= link_to 'Structures', '/templates/structures'
-             %li= link_to 'Snippets', '/templates/snippets'
+    #header
+      RouCoLa - Router Configuration Lab
+    %div(class="colmask leftmenu")
+      .colleft
+        .col1
+          #contents
+            = yield
+        .col2
+          #menu
+            %ul
+              %li
+                %a(href="#") Nodes
+                %ul
+                  %li= link_to 'List', '/nodes'
+                  %li= link_to 'Define New', '/nodes/add'
+              %li
+                %a(href="#") Templating
+                %ul
+                  %li= link_to 'Structures', '/templates/structures'
+                  %li= link_to 'Snippets', '/templates/snippets'
 
-         %li
-           %a(href="#") Administration
-           %ul
-             %li= link_to 'Users', '/administration/users'
-             %li= link_to 'Audit Logs', '/administration/audit' 
+              %li
+                %a(href="#") Administration
+                %ul
+                  %li= link_to 'Users', '/administration/users'
+                  %li= link_to 'Audit Logs', '/administration/audit' 
+      #footer
 
-     #contents
-       =yield
 
