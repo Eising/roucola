@@ -158,6 +158,32 @@ img {
 }
 
 .composearea {
-    width: 100%;
+    width: 90%;
     height: 475px;
+}
+
+fieldset {
+    background-color: #F5FAFA;
+    border: 0px;
+}
+
+label {
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 0 0 6px;
+    text-transform: uppercase;
+}
+input, select {
+    width: 250px;
+}
+input, textarea, select {
+    padding: 10px;
+    margin: 0 0 20px 0;
+    border: 1px solid #dcdcdc;
+
+}
+input[type=submit] {
+    background-color: #ACD1E9;
+    font-weight: bold;
+
 }

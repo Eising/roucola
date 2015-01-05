@@ -1,23 +1,19 @@
 ---
-validators:
-    vlan:
-        :description: Validates Vlan
-        :class: validatevlan
-    net:
-        :description: Validates subnets
-        :class: validatenet
-    crid:
-        :description: Validates CRID-numbers
-        :class: validatecrid
-    ip:
-        :description: Validates IP addresses
-        :class: validateip
-        :object: IPAddress
-    interface:
-        :description: Validates interfaces
-        :class: validateinterface
-    asn:
-        :description: Validates AS-numbers
-        :class: validateasn
-    none:
-        :description: No validation
+vlan:
+    :description: Validates Vlan
+    :class: validatevlan
+net:
+    :description: Validates subnets
+    :class: validatenet
+ip:
+    :description: Validates IP addresses
+    :class: validateip
+    :object: IPAddress
+interface:
+    :description: Validates interfaces
+    :class: validateinterface
+asn:
+    :description: Validates AS-numbers
+    :class: validateasn
+none:
+    :description: No validation

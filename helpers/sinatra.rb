@@ -1,5 +1,10 @@
 class Roucola < Sinatra::Base
     include Haml::Helpers
+
+    def extract_options!
+        last.is_a?(::Hash) ? pop : {}
+    end
+
     def link_to(text, href, args=nil)
         b = Builder::XmlMarkup.new
         if args
@@ -12,10 +17,10 @@ class Roucola < Sinatra::Base
     end
     
     def form_tag(url, options={}, &block)
-        options = {
+        options.update( {
             :action => url,
             'accept-charset' => 'UTF-8'
-        }
+        } )
         options[:enctype] = 'multipart/form-data' if options.delete(:multipart)
         b = Builder::XmlMarkup.new
         contents = capture_haml(&block)
@@ -46,5 +51,22 @@ class Roucola < Sinatra::Base
         caption = args.length >= 1 ? args.first : "Submit"
         input_field(:submit, { :value => caption }.merge(options))
     end
+
+    def textarea(options={}, &block)
+        b = Builder::XmlMarkup.new
+        if block_given?
+            contents = capture_haml(&block)
+        else
+            contents = ""
+
+        end
+        xml = b.textarea(contents, options)
+        xml
+    end
+
+    def hidden(name, value, options={})
+        input_field(:hidden, {:name => name, :value => value}.update(options))
+    end
+
 
 end

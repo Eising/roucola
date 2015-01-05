@@ -1,19 +1,21 @@
 %h1 Add snippet
 
 
-= form_tag '/configure', :method => "POST" do
+= form_tag '/snippets/configure', :method => "POST" do
   = field_set_tag do
     %p
       %label Name
+      %br
       = text_field :name
     %p
-      %label Tags
-      = text_field :tags
+      %label Keywords
+      %br
+      = text_field :keywords
       
     %p
-      %label Template
+      %label Snippet
       %br
-      %textarea{:name => "template", :class => "composearea"}
+      = textarea :name => "snippet", :class => "composearea"
     %p
       = submit_tag
 

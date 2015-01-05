@@ -1,0 +1,10 @@
+= hidden "templates[#{@key}]", @snippet.id
+= field_set_tag do
+  %legend= @snippet.name
+  - @fields.each do |name, type|
+    %label= name
+    = text_field "#{@key}_#{name}", :class => "required #{@validators[type][:class]}"
+    %br
+
+
+

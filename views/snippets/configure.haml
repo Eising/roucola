@@ -1,0 +1,19 @@
+%h1 Configure tags
+
+= form_tag '/snippets/create', :method => 'POST' do
+  = field_set_tag do
+    = hidden 'name', @name
+    = hidden 'keywords', @keywords
+    = hidden 'snippet', @snippet
+    - @tags.each do |tag|
+      %label #{tag}
+      %br
+      %select(name="tag_#{tag}" class="required")
+        %option(value="") Select class
+        - @validators.each do |validator, detail|
+          %option(value="#{validator}") #{detail[:description]}
+      %br
+    %br
+      = submit_tag
+
+

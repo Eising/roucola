@@ -1,0 +1,13 @@
+%h1 Manage snippets
+%table
+  %tr
+    %th id
+    %th name
+    %th keywords
+  - @snippets.each do |snippet|
+    %tr
+      %td= snippet.id
+      %td= snippet.name
+      %td= snippet.keywords
+
+
